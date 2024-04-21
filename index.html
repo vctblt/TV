@@ -24,12 +24,14 @@
             text-decoration: none;
             margin: 0 10px;
         }
-        #main-frame {
-            /* height: 90vh; 90% of viewport height */
+        #main-frame-container {
+            height: calc(100vh - 40px); /* 100% of viewport height minus height of top frame (40px) */
             overflow: auto; /* Enable scroll if content exceeds frame height */
-            border: 0px solid #fff;
-            padding: 10px;
-            size: 100%
+        }
+        #main-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         /* Vendor prefixes for box-sizing */
         #top-frame, #top-frame * {
@@ -51,8 +53,15 @@
         <a href="https://example.com" target="main-frame">Link 8</a>
         <a href="https://example.com" target="main-frame">Link 9</a>
         <a href="https://example.com" target="main-frame">Link 10</a>
+        <a href="https://example.com" target="main-frame">Link 11</a>
+        <a href="https://example.com" target="main-frame">Link 12</a>
+        <a href="https://example.com" target="main-frame">Link 13</a>
+        <a href="https://example.com" target="main-frame">Link 14</a>
+        <a href="https://example.com" target="main-frame">Link 15</a>
     </div>
-    <iframe id="main-frame" name="main-frame"></iframe>
+    <div id="main-frame-container">
+        <iframe id="main-frame" name="main-frame"></iframe>
+    </div>
     <!-- Your main content goes here -->
 </body>
 </html>
