@@ -3,49 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV</title>
+    <title>Top Frame with Links</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
         }
         #top-frame {
-            background-color: #000000;
-            color: #ffffff;
+            background-color: #fff;
+            color: #000;
             padding: 10px;
             text-align: center;
-            display: flex; /* Ensure flexbox layout */
-            justify-content: center; /* Center align links horizontally */
-            align-items: center; /* Center align links vertically */
         }
         #top-frame a {
-            color: #ffffff;
+            color: #000;
             text-decoration: none;
             margin: 0 10px;
         }
-        /* Vendor prefixes for box-sizing */
-        #top-frame, #top-frame * {
-            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-            -moz-box-sizing: border-box; /* Firefox, other Gecko */
-            box-sizing: border-box; /* Opera/IE 8+ */
+        #bottom-frame {
+            height: 80vh; /* 80% of the viewport height */
+            overflow: auto; /* Enable scrolling if content exceeds frame height */
+            border: 1px solid #ccc; /* Add a border for visual separation */
+            padding: 20px;
         }
     </style>
 </head>
 <body>
     <div id="top-frame">
-        <a href="https://auvio.rtbf.be/">La Une</a>
-        <a href="#">La Deux</a>
-        <a href="#">RTL TVI</a>
-        <a href="#">CLUB RTL</a>
-        <a href="#">TF1</a>
-        <a href="#">FRANCE 2</a>
-        <a href="#">FRANCE 5</a>
-        <a href="#">ARTE</a>
-        <a href="#">France 24</a>
-        <a href="#">CNN</a>
-    </div>
-    <!-- Your main content goes here -->
-</body>
-</html>
+        <a href="https://auvio.rtbf.be/" target="bottom-frame">La Une</a>
+        <a href="https://www.example.com" target="bottom-frame">Link 2</a>
+        <a href="https://www.example.com" target="bottom-frame">Link 3</a>
+        <a href="https://www.example.com" target="bottom-frame">Link 4</a>
+        <a href="https://www.example.com" target="bottom-frame">Link 5</a>
+        <a href="https://www.example.com" target="bottom-frame">Link 6</a>
+        <a href="https://www.example.com" target="bottom-frame">Link 7</a>
+        <a href="https://www.example.com" target="bottom-frame">Link 8</a>
+        <a href="https://www.example.com" target="bottom-frame">Link 9</a>
+        <a href="https://www.example.com" target="bottom-frame">Link 10</a>
+    <iframe id="bottom-frame" nam
