@@ -15,38 +15,43 @@
             color: #000;
             padding: 10px;
             text-align: center;
+            display: flex; /* Ensure flexbox layout */
+            justify-content: center; /* Center align links horizontally */
+            align-items: center; /* Center align links vertically */
         }
         #top-frame a {
             color: #000;
             text-decoration: none;
             margin: 0 10px;
         }
-        #bottom-frame {
-            height: 80vh; /* 80% of the viewport height */
-            overflow: auto; /* Enable scrolling if content exceeds frame height */
-            border: 1px solid #ccc; /* Add a border for visual separation */
-            padding: 20px;
+        #main-frame {
+            height: 90vh; /* 90% of viewport height */
+            overflow: auto; /* Enable scroll if content exceeds frame height */
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        /* Vendor prefixes for box-sizing */
+        #top-frame, #top-frame * {
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box; /* Opera/IE 8+ */
         }
     </style>
 </head>
 <body>
     <div id="top-frame">
-        <a href="https://auvio.rtbf.be" target="bottom-frame">La Une</a>
-        <a href="https://www.google.com" target="bottom-frame">Google</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 3</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 4</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 5</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 6</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 7</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 8</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 9</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 10</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 11</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 12</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 13</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 14</a>
-        <a href="https://www.example.com" target="bottom-frame">Link 15</a>
+        <a href="https://google.com" target="main-frame">Google</a>
+        <a href="https://example.com" target="main-frame">Link 2</a>
+        <a href="https://example.com" target="main-frame">Link 3</a>
+        <a href="https://example.com" target="main-frame">Link 4</a>
+        <a href="https://example.com" target="main-frame">Link 5</a>
+        <a href="https://example.com" target="main-frame">Link 6</a>
+        <a href="https://example.com" target="main-frame">Link 7</a>
+        <a href="https://example.com" target="main-frame">Link 8</a>
+        <a href="https://example.com" target="main-frame">Link 9</a>
+        <a href="https://example.com" target="main-frame">Link 10</a>
     </div>
-    <iframe id="bottom-frame" name="bottom-frame"></iframe>
+    <iframe id="main-frame" name="main-frame"></iframe>
+    <!-- Your main content goes here -->
 </body>
 </html>
