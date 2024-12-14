@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.88">
-<title>Programme</title>
+    <title>Temps d'attente STIB</title>
+    <script>
+        async function fetchTimes() {
+            const stopId = '5352'; // Remplacez par l'ID de votre arrêt
+            const apiKey = '873665222d89adf30a4d2fbaad9f8976e4515d32d6892b73f886b0e4'; // Ajoutez votre clé API
+
+            try {
+                const response = await fetch(`https://api.stib-mivb.be/OperationMonitoring/4.0/Passages/${stopId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error('Erreur lors de la récupération des données');
+                }
+                const data = await response.json();
+                displayTimes(data);
+            } catch (error) {
+                console.error('Erreur :', error);
+            }
+        }
+
+        function displayTimes(data) {
+            const container = document.getElementById('times');
+            container.innerHTML = '';
+            data['lines'].forEach(line => {
+                const nextPassages = line['passingTimes'].map(passage => 
+                    `Ligne ${line['lineId']} - Prochain passage : ${passage['expectedArrivalTime']}`
+                ).join('<br>');
+                container.innerHTML += `<p>${nextPassages}</p>`;
+            });
+        }
+
+        window.onload = fetchTimes;
+    </script>
 </head>
 <body>
-<iframe name="mainframe" id="mainframe" src="https://www.guidetv.be/program/content/2/1/0/0/21/25/FFFFFF/FFFFFF/313131/111111" scrolling="no" width="827" height="796" frameborder="0" marginwidth="0" marginheight="0"></iframe>
-</center></body>
+    <h1>Temps d'attente à l'arrêt</h1>
+    <div id="times">Chargement...</div>
+</body>
 </html>
