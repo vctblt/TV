@@ -4,15 +4,9 @@
     <title>Temps d'attente STIB</title>
     <script>
         async function fetchTimes() {
-            const stopId = '8672'; // Remplacez par l'ID de votre arrêt
-            const apiKey = '873665222d89adf30a4d2fbaad9f8976e4515d32d6892b73f886b0e4'; // Ajoutez votre clé API
-
+            const stopId = '1234'; // Remplacez par l'ID de votre arrêt
             try {
-                const response = await fetch(`https://api.stib-mivb.be/OperationMonitoring/4.0/Passages/${stopId}`, {
-                    headers: {
-                        'Authorization': `Bearer ${apiKey}`
-                    }
-                });
+                const response = await fetch(`http://localhost:3000/api/stib?stopId=${stopId}`);
                 if (!response.ok) {
                     throw new Error('Erreur lors de la récupération des données');
                 }
@@ -39,6 +33,6 @@
 </head>
 <body>
     <h1>Temps d'attente à l'arrêt</h1>
-    <div id="times"></div>
+    <div id="times">Chargement...</div>
 </body>
 </html>
