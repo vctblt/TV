@@ -1,38 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Temps d'attente STIB</title>
-    <script>
-        async function fetchTimes() {
-            const stopId = '1234'; // Remplacez par l'ID de votre arrêt
-            try {
-                const response = await fetch(`http://localhost:3000/api/stib?stopId=${stopId}`);
-                if (!response.ok) {
-                    throw new Error('Erreur lors de la récupération des données');
-                }
-                const data = await response.json();
-                displayTimes(data);
-            } catch (error) {
-                console.error('Erreur :', error);
-            }
-        }
-
-        function displayTimes(data) {
-            const container = document.getElementById('times');
-            container.innerHTML = '';
-            data['lines'].forEach(line => {
-                const nextPassages = line['passingTimes'].map(passage => 
-                    `Ligne ${line['lineId']} - Prochain passage : ${passage['expectedArrivalTime']}`
-                ).join('<br>');
-                container.innerHTML += `<p>${nextPassages}</p>`;
-            });
-        }
-
-        window.onload = fetchTimes;
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.88">
+<title>Programme</title>
 </head>
 <body>
-    <h1>Temps d'attente à l'arrêt</h1>
-    <div id="times">Chargement...</div>
-</body>
+<center>
+<iframe name="mainframe" id="mainframe" src="https://www.guidetv.be/program/content/2/1/0/0/21/25/FFFFFF/FFFFFF/313131/111111" scrolling="no" width="827" height="796" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+</center></body>
 </html>
